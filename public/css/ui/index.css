@@ -1,0 +1,149 @@
+/* Code by Jakcalie 
+Updated : 18/05/2017
+/*font*/
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=vietnamese');
+</style>
+/*font-family: 'Roboto Slab', serif;*/
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Baloo&subset=vietnamese');
+</style>
+/*font-family: 'Baloo', cursive;*/
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand&subset=vietnamese');
+</style>
+
+/*font-family: 'Patrick Hand', cursive;*/
+
+
+/*end font*/
+body{
+	padding-top: 5rem;
+}
+/*content*/
+#content{
+	margin-top: 5.1rem;
+}
+.row-jumbotron{
+	background-size: cover;
+	color: white
+}
+
+.container-jumbotron{
+	background:rgba(0,0,0,.6);
+	border-radius:1rem;
+	position: relative;
+}
+
+.title{
+	color: #f0e9ee !important;
+	font-family: 'Roboto Slab', serif;
+	max-width: 70%;
+}
+.desc{
+	color: #f0f0f0;
+	font-size: 16px!important;
+}
+
+.date{
+	color: #f0f0f0
+}
+.author,.author:hover{
+	color: #e06000;
+	text-decoration: underline;
+}
+
+.glyphicon-jumbotron{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	z-index: 2000;
+	font-weight: bold;
+	font-size: 18px;
+	display: block;
+}
+.jumbotron-icon{
+	display: none;
+	font-size: 16px;
+}
+.view-number{
+	margin-right: 1rem
+}
+/*pagination*/
+
+#pagination nav ul{
+	margin:auto;
+}
+
+/*side content*/
+#right-content{
+	float:right;
+	height: 100%;
+	position: fixed;
+	top: 2;
+	right:0;
+	z-index: 1;
+	overflow:auto;
+	padding-top:1rem;
+	padding-bottom:6rem; 
+	/*background*/
+	background: #8e9eab;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#left-content{
+	display: block;
+}
+/*Confession*/
+#conf-title{
+	font-family: 'Baloo', cursive;
+	color: #646e83
+;
+	text-decoration: underline;
+}
+
+.conf-content{
+	font-family: 'Patrick Hand', cursive;
+	font-size: 15px;
+	font-weight: 900;
+}
+
+.conf-span{
+	margin-right: 1rem;
+}
+
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.glyphicon-jumbotron{
+		display: none;
+	}
+	.jumbotron-icon{
+		display: inline;
+	}	
+	.title{
+		font-size: 24px;
+    	max-width: 100%;
+	}
+}
+@media (max-width: 1000px) {
+	#left-content{
+		display: block;
+	}
+	#right-content{
+		float: left;
+		display: none;
+		width: 100%;
+	}
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	
+}
+

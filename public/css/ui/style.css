@@ -1,0 +1,45 @@
+/* Code by Jakcalie 
+Updated : 18/05/2017
+*/
+
+/*Nav bar*/
+.navbar nav li{
+	padding:13px 15px;
+}
+.test{
+	border:1px solid black;
+	min-height: 300px;
+}
+li#add_post{
+	background: #16BFFD;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */	
+	transition:border-radius .5s linear;
+}
+li#add_post:hover,li#add_post:hover a{
+	border-radius: 1rem 0 3rem 0;
+	transform: rotateY(360deg);
+}
+li#add_post a{
+	color: #fff;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	transition: transform 1s linear;
+}
+li#btn-conf{
+	background: #73C8A9;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, 
+	Safari 7+ */
+}
+#btn-conf a{
+	display: none;
+	color: #fff;
+	font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+	#btn-conf a{
+		display: block;
+	}
+}

@@ -1,0 +1,35 @@
+/*Table*/
+
+
+table#miyazaki thead th { font-weight: 600; }
+table#miyazaki thead th, table#miyazaki tbody td { 
+  padding: .8rem; font-size: 1.4rem;
+}
+table#miyazaki tbody td { 
+  padding: .8rem; font-size: 1.4rem;
+  color: #444;
+}
+table#miyazaki tbody tr:not(:last-child) { 
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;  
+}
+
+@media screen and (max-width: 900px) {
+  table#miyazaki thead { display: none; }
+  table#miyazaki tbody td { 
+    display: block; padding: 1rem; 
+  }
+  table#miyazaki tbody tr td:first-child { 
+    background: #DFF0D8;
+  }
+  table#miyazaki tbody tr td:last-child { 
+    background: #F2DEDE;
+  }
+	table#miyazaki tbody td:before { 
+    content: attr(data-th); 
+    font-weight: bold;
+    display: inline-block;
+    width: 10rem;
+    margin-bottom: 0.2rem;  
+  }
+}

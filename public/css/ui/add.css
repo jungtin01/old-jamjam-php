@@ -1,0 +1,17 @@
+/*Add CSS
+Created by Nguyen Trung Thinh
+Updated 21/06/2017*/
+body{
+	background-size: auto !important;
+	background-attachment: fixed !important;
+}
+#authpass{
+	width: 6rem;
+}
+#forms{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-top: 6.1rem;
+	background:rgba(255,255,255,.6);
+	min-height: 300px;
+}

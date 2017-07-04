@@ -1,0 +1,54 @@
+/*Admin's interface CSS
+Created by Nguyen Trung Thinh 
+Updated : 21/05/2017
+*/
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Mitr:200,300,400,500,600,700&subset=vietnamese');
+/*font-family: 'Mitr', sans-serif;*/
+
+/*End Fonts*/
+#miyazaki{
+	margin-bottom: 5rem;
+}
+.table td{
+	font-family: 'Mitr', sans-serif;
+}
+.username{
+	font-size: 16px
+}
+.cate-form{
+	margin-top: 1rem;
+}
+#txtCateId{
+	width:5rem;
+}
+/*fixed bottom nav*/
+li#add_post{
+	background: #16BFFD;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */	
+	transition:border-radius .5s linear;
+}
+li#add_post:hover,li#add_post:hover a{
+	border-radius: 1rem 0 3rem 0;
+	transform: rotateY(360deg);
+}
+li#add_post a{
+	color: #fff;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	transition: transform 1s linear;
+}
+
+@media screen and (max-width: 900px) {
+	.username{
+		margin-top: 5rem;
+	}
+	#miyazaki .line:first-child .username{
+		margin-top: 0px;
+	}
+	#miyazaki{
+		margin-bottom: 5rem;
+	}
+}

@@ -1,0 +1,75 @@
+/*Post CSS
+Created by Nguyen Trung Thinh
+Updated 20/05/2000*/
+
+.test{
+	border:1px solid black;
+	min-height: 300px;
+}
+#left-content{
+	margin-top: 5.1rem;
+}
+#header-nav{
+	margin-bottom: 0px!important;
+}
+#main-container{
+	margin-top:0;
+	background:url(../img/girl1.jpg) center center no-repeat;
+	background-size: cover;
+}
+#opa-container{
+	background:rgba(255,255,255,.7);
+}
+/*left*/
+.title,.desc,#left-content p{
+}
+#left-content p{
+	margin:1rem 0 1rem;
+}
+.embed{
+	position:relative;
+	height:0;
+	padding-bottom:56.25%
+}
+.item{
+	background: #222;
+}
+.item img{
+	opacity: 0.5;
+	position: relative;
+}
+.item h4{
+	position: absolute;
+	z-index: 10;
+	color: #fff;
+	bottom: 1rem;
+	left: 1rem;
+	text-shadow: 2px 2px #666;
+}
+
+#footer{
+	background: #797F85;
+	text-align: center;
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+	#right-content{
+		background: #E7E7E7;
+		padding-top: .5rem;
+		position: static;
+		margin:2rem 0;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+	
+}
