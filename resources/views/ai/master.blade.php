@@ -33,10 +33,10 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{ route('admin.user') }}">Users<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="{{ route('user.index') }}">Users<span class="sr-only">(current)</span></a></li>
                             <li><a href="{{ route('post.index') }}">Posts</a></li>
                             <li><a href="#" data-toggle='modal' data-target="#myModal">Cates</a></li>
-                            <li><a href="{{ route('admin.conf') }}">Confessions</a></li>
+                            <li><a href="{{ route('conf.index') }}">Confessions</a></li>
                             <li id="add_post"><a href="{{ route('add') }}">Quẩy</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

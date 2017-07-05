@@ -3585,3 +3585,30 @@ Stack trace:
 [2017-07-03 19:04:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function delete() on null' in D:\newXampp\htdocs\jamjam\app\Http\Controllers\catesController.php:96
 Stack trace:
 #0 {main}  
+[2017-07-04 15:29:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:32
+Stack trace:
+#0 {main}  
+[2017-07-04 15:31:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:32
+Stack trace:
+#0 {main}  
+[2017-07-04 15:32:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:32
+Stack trace:
+#0 {main}  
+[2017-07-04 15:33:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:32
+Stack trace:
+#0 {main}  
+[2017-07-04 15:40:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SESSION' not found' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:22
+Stack trace:
+#0 {main}  
+[2017-07-04 15:40:21] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SESSION' not found' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:22
+Stack trace:
+#0 {main}  
+[2017-07-04 15:40:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SESSION' not found' in D:\newXampp\htdocs\jamjam\storage\framework\views\855819476d4213e88f8c53d26f5e702512474e1c.php:22
+Stack trace:
+#0 {main}  
+[2017-07-04 16:10:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in D:\newXampp\htdocs\jamjam\storage\framework\views\98778d8f78ed6c184281d2b4b9fdf1297bc16240.php:24
+Stack trace:
+#0 {main}  
+[2017-07-05 04:56:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in D:\newXampp\htdocs\jamjam\storage\framework\views\504fd4497cfb44ab9da58a42fbb295926cb31966.php:24
+Stack trace:
+#0 {main}  

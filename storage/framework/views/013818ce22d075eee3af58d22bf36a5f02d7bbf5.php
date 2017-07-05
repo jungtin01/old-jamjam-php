@@ -45,7 +45,7 @@
                                 <div class="form-group">
                                     <label for="txtCatename" class="control-label">CateId:</label>
                                     <input type="text" class="form-control" id="txtCateId" disabled="disabled">
-                                    <input type="text" class="form-control" id="txtCatenameEdit">
+                                    <input type="text" class="form-control" id="txtCatenameEdit" required>
                                     <input type="submit" class="btn btn-warning" value="Sửa" id="cate_edit">
                                     <input type="submit" class="btn btn-danger" value="Xóa" id="cate_delete">
                                 </div>

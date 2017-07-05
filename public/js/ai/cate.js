@@ -61,4 +61,26 @@ $(document).ready(function(){
 			$('.alert-del').delay(3000).slideUp(500);
 		}
 	});
+
+	$("#cate_edit").click(function(e){
+		e.preventDefault();
+		token = $("input[name='_token']").val();
+		id = $("#txtCateId").val();
+		txtCatenameEdit = $("#txtCatenameEdit").val();
+		if( id != '' ){
+			$.ajax({
+				url: 'cate/'+id,
+				type:'PUT',
+				data:{'_token':token,'name':txtCatenameEdit},
+				async:true,
+				success:function(data){
+					$(".alertContainer").append("<div class='alert alert-success alert-edit' role='alert'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>Bạn đã edit thành công [Cate: "+data.name+" ]</div>");
+					$('.alert-edit').delay(3000).slideUp(500);
+					$('.cate_a[data-id="'+data.id+'"').text(data.name);
+					$("#txtCateId").val('');
+					$("#txtCatenameEdit").val('');
+				}
+			});
+		}
+	});
 });

@@ -16,6 +16,16 @@ $(document).ready(function(){
 		$('#left-content').css('width','100%');
 	})
 
+	$('.add').click(function(e) {
+	    e.preventDefault();
+	    if (confirm('Bạn có chắc muốn quẩy')) {
+	        if (confirm('Ok để Post bài | Cancel để Confess')) {
+	            window.location.href = urlAdd;
+	        } else {
+	            window.location.href = urlConf;
+	        }
+	    }
+	});
 	// bắt sự kiện scroll
 	
 	

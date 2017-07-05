@@ -25,10 +25,10 @@ Route::get("add",['as'=>'add','uses'=>'uiController@add']);
 
 Route::get("admin",['as'=>'admin','uses'=>'aiController@admin']);
 Route::prefix('admin')->group(function () {
-	Route::get("admin/user",['as'=>'admin.user','uses'=>'aiController@user']);
-	Route::get("admin/conf",['as'=>'admin.conf','uses'=>'aiController@conf']);
 	Route::get("admin/view",['as'=>'admin.view','uses'=>'aiController@view']);
 
+	Route::resource('user','usersController');
+	Route::resource('conf','confsController');
 	Route::resource('cate','catesController');
 	Route::resource('post','postsController');
 });

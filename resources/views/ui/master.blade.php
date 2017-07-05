@@ -32,7 +32,11 @@
                             <li class="active"><a href="#" id="btn-home">Home <span class="sr-only">(current)</span></a></li>
                             <li id='btn-conf'><a href="#">Confession</a></li>
                             <li><a href="{{ route('admin') }}">Admin</a></li>
-                        <li id="add_post"><a href="{{ route('add') }}">Quẩy</a></li>
+                            <li id="add_post"><a href="#"  class="add">Quẩy</a></li>
+                            <script type="text/javascript">
+                                var urlAdd = "{{ route('add') }}";
+                                var urlConf = "{{ route('conf.create') }}";
+                            </script>
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="input-group">
@@ -77,7 +81,7 @@
         @yield('content')
         <!-- jQuery first, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    	<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
         <!-- Custom JS -->
         <script src="{{ asset('public/js/ui/script.js') }}"></script>
         @yield('morejs')
