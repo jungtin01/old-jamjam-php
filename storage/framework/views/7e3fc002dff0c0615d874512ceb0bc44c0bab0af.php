@@ -1,3 +1,7 @@
+<?php $__env->startSection('morejs'); ?>
+<!-- User JS  -->
+    <script src="<?php echo e(asset('public/js/ai/user.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('ai.blocks.userModal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <!-- Table -->
@@ -8,266 +12,20 @@
                                 <tr>
                                     <th class="success">Username</th>
                                     <th>FB.account</th>
-                                    <th>Email</th>
-                                    <th class="warning">Level</th>
+                                    <th class="warning"  style="width: 15rem;">Level</th>
                                     <th>Posts</th>
-                                    <th>School</th>
-                                    <th>Age</th>
                                     <th class="danger">Delete</th>
                                 </tr>
                             <tbody>
+                                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
+                                    <td class="username success"><a role='button' data-id="<?php echo e($user->id); ?>"><?php echo e($user->username); ?></a></td>
+                                    <td><a href='javascript:void(0)'>None</a></td>
+                                    <td class="form-group"><input type="text" name="level" value="<?php if($user->level == 0): ?> User <?php else: ?> Admin <?php endif; ?>" class="form-control" disabled="disabled" data-level="<?php echo e($user->level); ?>"></td>
                                     <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
                                     <td><button type="button" class="btn btn-danger">DELETE</button></td>
                                 </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
-                                <tr class="line">
-                                    <td class="username success"><a role='button' data-toggle="modal" data-target="#myModal">Jakcalie</a></td>
-                                    <td><a href='javascript:void(0)'>nguyentrungthinh2000</a></td>
-                                    <td>nguyentrungthinh2000@gmail.com</td>
-                                    <td class="form-group"><select class="form-control">
-                                        <option value="1">User</option>
-                                        <option value="2">Moderator</option>
-                                        <option value="3">Admin</option>
-                                    </select></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td>THPT Hoàng Hoa Thám</td>
-                                    <td>17</td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
-                                </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </table>
                         <!-- Button trigger modal -->
                     </div> <!-- end row table -->

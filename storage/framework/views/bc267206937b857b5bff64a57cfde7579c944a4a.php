@@ -32,7 +32,11 @@
                             <li class="active"><a href="#" id="btn-home">Home <span class="sr-only">(current)</span></a></li>
                             <li id='btn-conf'><a href="#">Confession</a></li>
                             <li><a href="<?php echo e(route('admin')); ?>">Admin</a></li>
-                        <li id="add_post"><a href="<?php echo e(route('add')); ?>">Quẩy</a></li>
+                            <li id="add_post"><a href="#"  class="add">Quẩy</a></li>
+                            <script type="text/javascript">
+                                var urlAdd = "<?php echo e(route('add')); ?>";
+                                var urlConf = "<?php echo e(route('conf.create')); ?>";
+                            </script>
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="input-group">
@@ -43,9 +47,31 @@
                             </div>
                         </form>
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="javascript:void(0)"><img src="<?php echo e(asset('public/upload/img/logo.png')); ?>" alt="Logo" width="120px"></a>
-                            </li>
+                            <?php if(Auth::guest()): ?>
+                                <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
+                                <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
+                            <?php else: ?>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <?php echo e(Auth::user()->username); ?> <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="<?php echo e(route('logout')); ?>"
+                                                onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+
+                                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                                <?php echo e(csrf_field()); ?>
+
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div> <!-- end collapse nav -->
                     <!-- /.navbar-collapse -->
@@ -56,7 +82,7 @@
         <?php echo $__env->yieldContent('content'); ?>
         <!-- jQuery first, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    	<script src="<?php echo e(asset('public/js/bootstrap.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/js/bootstrap.min.js')); ?>"></script>
         <!-- Custom JS -->
         <script src="<?php echo e(asset('public/js/ui/script.js')); ?>"></script>
         <?php echo $__env->yieldContent('morejs'); ?>

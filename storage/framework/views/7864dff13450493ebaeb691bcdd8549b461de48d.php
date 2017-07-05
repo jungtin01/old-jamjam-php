@@ -1,3 +1,7 @@
+<?php $__env->startSection('morejs'); ?>
+<!-- Cate Handle -->
+<script type="text/javascript" src="<?php echo e(asset('public/js/ai/cate.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <?php echo $__env->make('ai.blocks.postModal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <!-- Table -->

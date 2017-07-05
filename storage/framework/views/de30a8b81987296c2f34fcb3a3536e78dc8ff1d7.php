@@ -29,26 +29,25 @@
                             </form>
                             <hr>
                             <h3>Category</h3>
+                            <div class="alertContainer"></div>
+                            <script type="text/javascript">
+                                var cateAddUrl = "<?php echo e(route('cate.store')); ?>";
+                            </script>
+                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                             <form class="form-inline cate-form">
                                 <div class="form-group">
                                     <label for="txtCatename" class="control-label">CateName:</label>
-                                    <input type="text" class="form-control" id="txtCatename">
-                                    <input type="submit" class="btn btn-success" value="Thêm">
+                                    <input type="text" class="form-control" id="txtCatename" name="txtCatename">
+                                    <input type="submit" class="btn btn-success" value="Thêm" id="cate_add">
                                 </div>
                             </form>
                             <form class="form-inline cate-form" style="margin-top:1rem;">
                                 <div class="form-group">
                                     <label for="txtCatename" class="control-label">CateId:</label>
-                                    <input type="text" class="form-control" id="txtCateEdit" disabled="disabled">
-                                    <input type="text" class="form-control" id="txtCatenameEdit">
-                                    <input type="submit" class="btn btn-warning" value="Sửa">
-                                </div>
-                            </form>
-                            <form class="form-inline cate-form">
-                                <div class="form-group">
-                                    <label for="txtCatename" class="control-label">CateId:</label>
-                                    <input type="text" class="form-control" id="txtCateDelete" disabled="disabled">
-                                    <input type="submit" class="btn btn-warning" value="Xóa">
+                                    <input type="text" class="form-control" id="txtCateId" disabled="disabled">
+                                    <input type="text" class="form-control" id="txtCatenameEdit" required>
+                                    <input type="submit" class="btn btn-warning" value="Sửa" id="cate_edit">
+                                    <input type="submit" class="btn btn-danger" value="Xóa" id="cate_delete">
                                 </div>
                             </form>
                             <hr>
@@ -66,11 +65,10 @@
                                     </div>
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                        <ul class="nav navbar-nav">
-                                            <li class="active"><a href="#">Users<span class="sr-only">(current)</span></a></li>
-                                            <li><a href="#">Posts</a></li>
-                                            <li><a href="#" data-toggle='modal' data-target="#myModal">Cates</a></li>
-                                            <li><a href="#">Confessions</a></li>
+                                        <ul class="nav navbar-nav cate-nav">
+                                        <?php $__currentLoopData = $cates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li><a href="#" data-id="<?php echo e($cate->id); ?>" class="cate_a"><?php echo e($cate->name); ?></a></li>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </ul>
                                     </div> <!-- end collapse nav -->
                                     <!-- /.navbar-collapse -->

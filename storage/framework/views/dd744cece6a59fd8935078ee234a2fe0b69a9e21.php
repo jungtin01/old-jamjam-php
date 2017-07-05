@@ -33,16 +33,38 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="<?php echo e(route('admin.user')); ?>">Users<span class="sr-only">(current)</span></a></li>
-                            <li><a href="<?php echo e(route('admin.post')); ?>">Posts</a></li>
+                            <li class="active"><a href="<?php echo e(route('user.index')); ?>">Users<span class="sr-only">(current)</span></a></li>
+                            <li><a href="<?php echo e(route('post.index')); ?>">Posts</a></li>
                             <li><a href="#" data-toggle='modal' data-target="#myModal">Cates</a></li>
-                            <li><a href="<?php echo e(route('admin.conf')); ?>">Confessions</a></li>
+                            <li><a href="<?php echo e(route('conf.index')); ?>">Confessions</a></li>
                             <li id="add_post"><a href="<?php echo e(route('add')); ?>">Quẩy</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="javascript:void(0)"><img src="<?php echo e(asset('public/upload/img/logo.png')); ?>" alt="Logo" width="120px"></a>
-                            </li>
+                            <?php if(Auth::guest()): ?>
+                                <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
+                                <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
+                            <?php else: ?>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <?php echo e(Auth::user()->username); ?> <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="<?php echo e(route('logout')); ?>"
+                                                onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+
+                                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                                <?php echo e(csrf_field()); ?>
+
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div> <!-- end collapse nav -->
                     <!-- /.navbar-collapse -->
