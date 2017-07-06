@@ -10,4 +10,8 @@ class catesModel extends Model
     protected $fillable = ['name','tbn','description'];
     
     public $timestamps = true;
+
+    public function posts(){
+    	return $this->hasMany('App\postsModel');
+    }
 }

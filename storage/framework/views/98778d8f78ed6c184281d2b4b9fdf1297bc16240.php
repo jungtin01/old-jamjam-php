@@ -9,6 +9,8 @@
                         <table id="miyazaki" class="table table-striped table-hover">
                         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                         <input type="hidden" name="admin_id" value="<?php echo e(Auth::id()); ?>">
+                        <input type="hidden" value="<?php echo e(URL::current()); ?>">
+                        <input type="hidden" value="<?php echo e(Route('conf.index')); ?>">
                             <thead>
                                 <tr>
                                     <th class="info">ID</th>

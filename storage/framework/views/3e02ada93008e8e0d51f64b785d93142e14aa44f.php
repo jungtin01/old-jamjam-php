@@ -35,7 +35,9 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="<?php echo e(route('user.index')); ?>">Users<span class="sr-only">(current)</span></a></li>
                             <li><a href="<?php echo e(route('post.index')); ?>">Posts</a></li>
+                            <?php if( URL::current() == Route('post.index')): ?>
                             <li><a href="#" data-toggle='modal' data-target="#myModal">Cates</a></li>
+                            <?php endif; ?>
                             <li><a href="<?php echo e(route('conf.index')); ?>">Confessions</a></li>
                             <li id="add_post"><a href="<?php echo e(route('add')); ?>">Quẩy</a></li>
                         </ul>

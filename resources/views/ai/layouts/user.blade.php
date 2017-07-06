@@ -24,7 +24,7 @@
                                     <td><a href='javascript:void(0)'>None</a></td>
                                     <td class="form-group"><input type="text" name="level" value="@if($user->level == 0) User @else Admin @endif" class="form-control" disabled="disabled" data-level="{{ $user->level }}"></td>
                                     <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
-                                    <td><button type="button" class="btn btn-danger">DELETE</button></td>
+                                    <td><button type="button" class="btn btn-danger userDel" data-id="{{ $user->id }}">DELETE</button></td>
                                 </tr>
                                 @endforeach
                         </table>

@@ -30,7 +30,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#" id="btn-home">Home <span class="sr-only">(current)</span></a></li>
-                            <li id='btn-conf'><a href="#">Confession</a></li>
+                            @if( URL::current() == Route('index') )
+                                <li id='btn-conf'><a href="#">Confession</a></li>
+                            @endif
                             <li><a href="{{ route('admin') }}">Admin</a></li>
                             <li id="add_post"><a href="#"  class="add">Quẩy</a></li>
                             <script type="text/javascript">

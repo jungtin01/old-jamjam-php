@@ -4122,3 +4122,12 @@ Stack trace:
 #51 D:\Xampp\htdocs\jamjam\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #52 D:\Xampp\htdocs\jamjam\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}  
+[2017-07-05 15:49:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Undefined class constant 'current'' in D:\newXampp\htdocs\jamjam\storage\framework\views\fa1f597f483cff03fd3758c6a6dc22a576018df0.php:33
+Stack trace:
+#0 {main}  
+[2017-07-05 15:49:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Undefined class constant 'current'' in D:\newXampp\htdocs\jamjam\storage\framework\views\fa1f597f483cff03fd3758c6a6dc22a576018df0.php:33
+Stack trace:
+#0 {main}  
+[2017-07-06 04:31:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in D:\newXampp\htdocs\jamjam\storage\framework\views\3e02ada93008e8e0d51f64b785d93142e14aa44f.php:84
+Stack trace:
+#0 {main}  

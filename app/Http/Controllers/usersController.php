@@ -70,7 +70,12 @@ class usersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $users = User::find($id);
+        $users->username = $request->username;
+        $users->level = $request->level;
+        $users->update();
+
+        return response()->json($users);
     }
 
     /**
@@ -81,6 +86,9 @@ class usersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+
+        return response()->json($users);
     }
 }

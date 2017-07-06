@@ -2,7 +2,7 @@
 // Updated : 4/7/2017 | Created by : Jakcalie
 
 $(document).ready(function(){
-	$(".confCheck").click(function(e){
+	$("tr.line").on('click','.confCheck',function(e){
 		e.preventDefault();
 		token = $("input[name='_token']").val();
 		user_id = $("input[name='admin_id']").val();
