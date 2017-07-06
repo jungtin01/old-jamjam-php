@@ -8,6 +8,7 @@
                         </div>
                         <div class="modal-body">
                             <form class="form-inline">
+                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                 <div class="form-group">
                                     <label for="username" class="control-label">Username:</label>
                                     <input type="text" class="form-control" id="username">
@@ -22,7 +23,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="save">Save changes</button>
                         </div>
                     </div>
                 </div>

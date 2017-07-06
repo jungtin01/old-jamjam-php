@@ -26,17 +26,22 @@
             <!-- end Modal -->  
         <section class="container-fluid" id='wrapper'>
             <div class="col-sm-offset-2 col-sm-8" id="forms">
-                <form>
+                <form action="<?php echo e(route('post.store')); ?>" method="POST" enctype="multipart/form-data">
+                    <div class="alertContainer">
+                        <?php if(session('status')): ?>
+                        <div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>Bạn đã Post thành công ... Post sẽ chờ ADMIN xét duyệt</div>
+                        <?php endif; ?>
+                    </div>
                     <div class="form-group">
                         <label for="txtTitle">Title</label>
                         <input type="text" name="txtTitle" class="form-control">
                     </div>
                     <div class="form-group form-inline">
                         <label for="cate">Category</label>
-                        <select class="form-control">
-                            <option>Cate 1</option>
-                            <option>Cate 2</option>
-                            <option>Cate 3</option>
+                        <select class="form-control" name="cate_id">
+                            <?php $__currentLoopData = $cates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($cate->id); ?>" name="cate_id"><?php echo e($cate->name); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
                     <div class="form-group form-inline">
@@ -52,7 +57,9 @@
                         <textarea name="txtContent" rows="7" style="resize: none" class="form-control"></textarea>
                         <script type="text/javascript">CKEDITOR.replace('txtContent')</script>
                     </div>
-                    <a class="btn btn-success" data-toggle="modal" data-target="#myModal">Đăng</a>
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                    <input type="hidden" name="user_id" value="<?php echo e(Auth::id()); ?>">
+                    <input type="submit" class="btn btn-success" value="Đăng">
                 </form>
             </div>
         </section>

@@ -19,7 +19,7 @@ $(document).ready(function(){
 	$('.add').click(function(e) {
 	    e.preventDefault();
 	    if (confirm('Bạn có chắc muốn quẩy')) {
-	        if (confirm('Ok để Post bài | Cancel để Confess')) {
+	        if (confirm('Ok để Post bài | Cancel để Confess | LƯU Ý : Để Post bài bạn cần phải đăng nhập')) {
 	            window.location.href = urlAdd;
 	        } else {
 	            window.location.href = urlConf;

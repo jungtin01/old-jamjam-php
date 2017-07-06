@@ -36,7 +36,7 @@
                             <li><a href="{{ route('admin') }}">Admin</a></li>
                             <li id="add_post"><a href="#"  class="add">Quẩy</a></li>
                             <script type="text/javascript">
-                                var urlAdd = "{{ route('add') }}";
+                                var urlAdd = "{{ route('post.create') }}";
                                 var urlConf = "{{ route('conf.create') }}";
                             </script>
                         </ul>

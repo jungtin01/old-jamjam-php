@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\catesModel;
+use App\postsModel;
 
 class postsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['only' => 'create' ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +30,8 @@ class postsController extends Controller
      */
     public function create()
     {
-        //
+        $cates = catesModel::all();
+        return view('ui.layouts.add',compact('cates'));
     }
 
     /**
@@ -36,7 +42,23 @@ class postsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $img = $request->file('tbn');
+        $imgname = $img->getClientOriginalName();
+        $upload = 'public/upload/imgsUpload';
+        $img->move($upload,$imgname);
+
+        //Upload file img
+        $posts = new postsModel;
+        $posts->title = $request->txtTitle;
+        $posts->tbn = $imgname;
+        $posts->description = $request->txtDesc;
+        $posts->content = $request->txtContent;
+        $posts->level = 0;
+        $posts->cate_id = $request->cate_id;
+        $posts->user_id = $request->user_id;
+        $posts->save();
+
+        return back()->with('status','Post thành công');
     }
 
     /**
