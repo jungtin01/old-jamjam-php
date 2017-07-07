@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\postsRequests;
 use App\catesModel;
 use App\postsModel;
 
@@ -20,7 +21,8 @@ class postsController extends Controller
     public function index()
     {
         $cates = catesModel::all();
-        return view('ai.layouts.post',compact('cates'));
+        $posts = postsModel::orderBy('id',"DESC")->get();
+        return view('ai.layouts.post',compact('cates','posts'));
     }
 
     /**
@@ -40,7 +42,7 @@ class postsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(postsRequests $request)
     {
         $img = $request->file('tbn');
         $imgname = $img->getClientOriginalName();
@@ -103,6 +105,17 @@ class postsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $posts = postsModel::find($id);
+        $posts->delete();
+
+        return response()->json($posts);
+    }
+    public function check(Request $request,$id){
+        $posts = postsModel::find($id);
+        $posts->level = $request->level;
+        $posts->edit_admin = $request->user_id;
+        $posts->update();
+
+        return response()->json($posts);
     }
 }

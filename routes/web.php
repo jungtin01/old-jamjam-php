@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
 	Route::resource('conf','confsController');
 	Route::resource('cate','catesController');
 	Route::resource('post','postsController');
+	Route::PUT('post/check/{id}',['as'=>'post.check','uses'=>'postsController@check']);
 });
 
 Auth::routes();

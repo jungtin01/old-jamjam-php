@@ -47,7 +47,8 @@ class usersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id)->posts()->get();
+        return response()->json($user);
     }
 
     /**

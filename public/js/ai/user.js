@@ -13,7 +13,29 @@ $(document).ready(function(){
 		}else{
 			clevel = $('select#level option[value="1"]').attr('selected','selected');
 		}
+		$(".edit").show();
+		$(".post").hide();
 		$("#myModal").modal('show');
+	});
+
+	$(".postModal").click(function(e){
+		e.preventDefault();
+		showUrl = $(this).attr("data-route");
+		// ajax
+		$.ajax({
+			url:showUrl,
+			type:"GET",
+			async:true,
+			success:function(data){
+				$(".post a").remove(); $(".post hr").remove();
+				$.each(data, function (index, value) {
+			        $(".post").append("<a href='javascript:void(0)'>"+value.title+"</a><hr>")
+			    });
+			    $(".edit").hide();
+				$(".post").show();
+				$("#myModal").modal('show');
+			}
+		});
 	});
 
 	$("#save").click(function(e){

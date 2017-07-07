@@ -23,7 +23,7 @@
                                     <td class="username success"><a role='button' data-id="{{ $user->id }}">{{ $user->username }}</a></td>
                                     <td><a href='javascript:void(0)'>None</a></td>
                                     <td class="form-group"><input type="text" name="level" value="@if($user->level == 0) User @else Admin @endif" class="form-control" disabled="disabled" data-level="{{ $user->level }}"></td>
-                                    <td><a role='button' data-toggle="modal" data-target="#myModal">3 Posts</a></td>
+                                    <td><a role='button' class="postModal"  data-route="{{ route('user.show',$user->id) }}">@if(count($user->posts) > 0) {{ count($user->posts) }} @else No post @endif</a></td>
                                     <td><button type="button" class="btn btn-danger userDel" data-id="{{ $user->id }}">DELETE</button></td>
                                 </tr>
                                 @endforeach

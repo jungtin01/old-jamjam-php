@@ -32,6 +32,13 @@
                         @if(session('status'))
                         <div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>Bạn đã Post thành công ... Post sẽ chờ ADMIN xét duyệt</div>
                         @endif
+                        @if(count($errors) > 0)
+                            <div class='alert alert-danger' role='alert'>
+                            @foreach($errors->all() as $error )
+                            <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>{{ $error }}<br><br>
+                            @endforeach
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="txtTitle">Title</label>

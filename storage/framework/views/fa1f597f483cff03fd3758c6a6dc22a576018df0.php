@@ -36,7 +36,7 @@
                             <li><a href="<?php echo e(route('admin')); ?>">Admin</a></li>
                             <li id="add_post"><a href="#"  class="add">Quẩy</a></li>
                             <script type="text/javascript">
-                                var urlAdd = "<?php echo e(route('add')); ?>";
+                                var urlAdd = "<?php echo e(route('post.create')); ?>";
                                 var urlConf = "<?php echo e(route('conf.create')); ?>";
                             </script>
                         </ul>

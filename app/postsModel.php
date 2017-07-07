@@ -13,6 +13,8 @@ class postsModel extends Model
     public function cate(){
     	return $this->belongsTo('App\catesModel');
     }
-
+    public function user(){
+    	return $this->belongsTo('App\User');
+    }
 
 }
