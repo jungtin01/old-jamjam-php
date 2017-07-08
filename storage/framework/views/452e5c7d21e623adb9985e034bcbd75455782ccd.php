@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="<?php echo e(asset('public/css/ui/index.css')); ?>">
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('morejs'); ?>
+<!-- Index JS -->
+    <script type="text/javascript" src="<?php echo e(asset('public/js/ui/index.js')); ?>"></script>
 	<!-- Scrollbar JS -->
         <script src="<?php echo e(asset('public/js/jquery.mCustomScrollbar.concat.min.js')); ?>"></script>
         <script>
@@ -28,27 +30,15 @@
                                 <li data-target="#carousel-example" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="item active">
-                                    <a href="#"><img src="<?php echo e(asset('public/upload/img/slide1.jpg')); ?>" /></a>
-                                    <div class="carousel-caption">
-                                        <h3>Meow</h3>
-                                        <p>Just Kitten Around</p>
-                                    </div>
-                                </div>
+                                <?php $__currentLoopData = $carous; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carou): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="item">
-                                    <a href="#"><img src="<?php echo e(asset('public/upload/img/slide2.jpg')); ?>" /></a>
+                                    <a href="<?php echo e(route('post',$carou->id)); ?>"><img src="<?php echo e(asset('public/upload/imgsUpload')); ?>/<?php echo e($carou->tbn); ?>" /></a>
                                     <div class="carousel-caption">
-                                        <h3>Meow</h3>
-                                        <p>Just Kitten Around</p>
+                                        <h3><?php echo e($carou->title); ?></h3>
+                                        <p><?php echo e($carou->description); ?></p>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <a href="#"><img src="<?php echo e(asset('public/upload/img/slide3.jpg')); ?>" /></a>
-                                    <div class="carousel-caption">
-                                        <h3>Meow</h3>
-                                        <p>Just Kitten Around</p>
-                                    </div>
-                                </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                             <a class="left carousel-control" href="#carousel-example" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -58,89 +48,35 @@
                             </a>
                         </div><!-- end carousel -->
                     </div> <!-- end row carousel -->
-                    <div class="row" id="row-content">
-                        <div class="jumbotron row-jumbotron" style="background-image:url('<?php echo e(asset('public/upload/img/slide1.jpg')); ?>');margin-top:5rem">
-                                <div class="container container-jumbotron">
-                                    <div class="glyphicon-jumbotron">
-                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                        <span class="view-number">0101</span>
-                                        <span>|</span>
-                                        <span class='glyphicon glyphicon-stats'></span>
-                                        <span class='view-number'>Rank 1</span>
-                                    </div>
-                                    <h2 class="title">Cô gái đầu tiên Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quasi?</h2>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt!</p>
-                                    <p>
-                                        <a class="btn btn-success btn-lg" href="<?php echo e(route('post')); ?>" role="button">Đọc</a>
-                                        <small class='date'>22/03/2000</small> |
-                                        <small><a href="javascript:void(0)"  class='author'>Nguyễn Trung Thịnh</a></small> |
-                                        <span class="jumbotron-icon">
+                    <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="row" id="row-content">
+                            <div class="jumbotron row-jumbotron" style="background-image:url(<?php echo e(asset('public/upload/imgsUpload/')); ?>/<?php echo e($post->tbn); ?>);margin-top:5rem">
+                                    <div class="container container-jumbotron">
+                                        <div class="glyphicon-jumbotron">
                                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                            <span>0101</span>
+                                            <span class="view-number">0101</span>
                                             <span>|</span>
                                             <span class='glyphicon glyphicon-stats'></span>
-                                            <span >Rank 1</span>
-                                        </span>
-                                    </p>
-                                </div>
-                        </div>
-                    </div> <!-- row-content -->
-
-                    <div class="row" id="row-content">
-                        <div class="jumbotron row-jumbotron" style="background-image:url('<?php echo e(asset('public/upload/img/slide1.jpg')); ?>')">
-                                <div class="container container-jumbotron">
-                                    <div class="glyphicon-jumbotron">
-                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                        <span class="view-number">0101</span>
-                                        <span>|</span>
-                                        <span class='glyphicon glyphicon-stats'></span>
-                                        <span class='view-number'>Rank 1</span>
+                                            <span class='view-number'>Rank 1</span>
+                                        </div>
+                                        <h2 class="title"><?php echo e($post->title); ?></h2>
+                                        <p class="desc"><?php echo e($post->desc); ?></p>
+                                        <p>
+                                            <a class="btn btn-success btn-lg" href="<?php echo e(route('post',$post->id)); ?>" role="button">Đọc</a>
+                                            <small class='date'><?php echo e($post->updated_at); ?></small> |
+                                            <small><a href="javascript:void(0)"  class='author'><?php echo e($post->user->username); ?></a></small> |
+                                            <span class="jumbotron-icon">
+                                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                                <span>0101</span>
+                                                <span>|</span>
+                                                <span class='glyphicon glyphicon-stats'></span>
+                                                <span >Rank 1</span>
+                                            </span>
+                                        </p>
                                     </div>
-                                    <h2 class="title">Cô gái đầu tiên Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quasi?</h2>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt!</p>
-                                    <p>
-                                        <a class="btn btn-success btn-lg" href="#" role="button">Đọc</a>
-                                        <small class='date'>22/03/2000</small> |
-                                        <small><a href="javascript:void(0)"  class='author'>Nguyễn Trung Thịnh</a></small> |
-                                        <span class="jumbotron-icon">
-                                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                            <span>0101</span>
-                                            <span>|</span>
-                                            <span class='glyphicon glyphicon-stats'></span>
-                                            <span >Rank 1</span>
-                                        </span>
-                                    </p>
-                                </div>
-                        </div>
-                    </div> <!-- row-content -->
-
-                    <div class="row" id="row-content">
-                        <div class="jumbotron row-jumbotron" style="background-image:url('<?php echo e(asset('public/upload/img/slide1.jpg')); ?>')">
-                                <div class="container container-jumbotron">
-                                    <div class="glyphicon-jumbotron">
-                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                        <span class="view-number">0101</span>
-                                        <span>|</span>
-                                        <span class='glyphicon glyphicon-stats'></span>
-                                        <span class='view-number'>Rank 1</span>
-                                    </div>
-                                    <h2 class="title">Cô gái đầu tiên Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quasi?</h2>
-                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt!</p>
-                                    <p>
-                                        <a class="btn btn-success btn-lg" href="#" role="button">Đọc</a>
-                                        <small class='date'>22/03/2000</small> |
-                                        <small><a href="javascript:void(0)"  class='author'>Nguyễn Trung Thịnh</a></small> |
-                                        <span class="jumbotron-icon">
-                                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                            <span>0101</span>
-                                            <span>|</span>
-                                            <span class='glyphicon glyphicon-stats'></span>
-                                            <span >Rank 1</span>
-                                        </span>
-                                    </p>
-                                </div>
-                        </div>
-                    </div> <!-- row-content -->
+                            </div>
+                        </div> <!-- row-content -->
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     <div class="row" id="pagination">
                         <nav aria-label="Page navigation" class="text-center">

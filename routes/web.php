@@ -20,7 +20,7 @@ Route::get("ui",function(){
 	return view('ui.master');
 });
 Route::get("index",['as'=>'index','uses'=>'uiController@index']);
-Route::get("post",['as'=>'post','uses'=>'uiController@post']);
+Route::get("post/{id}",['as'=>'post','uses'=>'uiController@post']);
 
 Route::get("admin",['as'=>'admin','uses'=>'aiController@admin']);
 Route::prefix('admin')->group(function () {

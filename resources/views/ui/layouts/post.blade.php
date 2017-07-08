@@ -13,18 +13,16 @@
         <script src="{{ asset('public/js/ui/post.js') }}"></script>   
 @endsection
 @section('content')
-<div class="container-fluid" id="main-container" style="background:url({{ asset('public/upload/img/slide1.jpg') }}) center center no-repeat;background-size: cover;">
+<div class="container-fluid" id="main-container" style="background:url({{ asset('public/upload/imgsUpload') }}/{{ $post->tbn }} }) center center no-repeat;background-size: cover;">
             <div class="row">
                 <div class="container-fluid" id="opa-container">
                     <div class="row">
                         <div class="col-md-8" id="left-content">
-                            <h1 class="title">Bài post số đầu tiên</h1>
-                            <p class="author"><a href="#">Nguyễn Trung Thinh</a><span> | </span>22/03/2000<span class='hidden-md hidden-lg'> | Save to Facebook</span></p>
-                            <p class="lead desc">đây là Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae voluptates ratione, illum debitis, minima est itaque veritatis porro dolor excepturi.</p>
+                            <h1 class="title">{{ $post->title }}</h1>
+                            <p class="author"><a href="#">{{ $post->user->username }}</a><span> | </span>{{ $post->updated_at }}<span class='hidden-md hidden-lg'> | Save to Facebook</span></p>
+                            <p class="lead desc">{{ $post->description }}</p>
                             <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda sed aliquam consectetur vel ad. Rerum, nisi. Velit error quasi ab officiis natus at ratione voluptates, id optio sed, sapiente voluptas.</p>
-                            <img src="{{ asset('public/upload/img/girl2.jpg') }}" alt="girl2" class="img-responsive">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem illum non assumenda quis tempora, porro debitis beatae doloribus recusandae possimus reiciendis fugit maxime nulla quibusdam incidunt iste impedit, sit laboriosam.</p>
+                            {!! $post->content !!}
                             
                             <hr>
                         
