@@ -14,8 +14,6 @@ Updated 20/05/2000*/
 }
 #main-container{
 	margin-top:0;
-	background:url(../img/girl1.jpg) center center no-repeat;
-	background-size: cover;
 }
 #opa-container{
 	background:rgba(255,255,255,.7);

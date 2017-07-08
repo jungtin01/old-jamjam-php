@@ -13,7 +13,7 @@
         <script src="{{ asset('public/js/ui/post.js') }}"></script>   
 @endsection
 @section('content')
-<div class="container-fluid" id="main-container">
+<div class="container-fluid" id="main-container" style="background:url({{ asset('public/upload/img/slide1.jpg') }}) center center no-repeat;background-size: cover;">
             <div class="row">
                 <div class="container-fluid" id="opa-container">
                     <div class="row">

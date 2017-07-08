@@ -39,4 +39,63 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+	$(".postEdit").click(function(e){
+		e.preventDefault();
+		urlEdit = $(this).attr('data-route');
+		imgAsset = $('input[name="img-asset"]').val();
+		$.ajax({
+			url:urlEdit,
+			type:"GET",
+			async:true,
+			success:function(data){
+				console.log(data);
+				$("input[name='txtTitle']").val(data.title);
+				$("option[value='"+data.cate_id +"']").attr("selected",'selected');
+				$("select[name='cate_id']").attr('oldCateId',data.cate_id);
+				$("img#tbn").attr('src',imgAsset+"/"+data.tbn);
+				$("textarea[name='txtDesc']").val(data.description);
+				CKEDITOR.instances['txtContent'].setData(data.content);
+				$("#save").attr('data-id',data.id);
+				$(".cate").hide();
+				$(".edit").show();
+				$('.modal-footer').show();
+				$("#myModal").modal("show");
+			}
+		});
+	});
+
+	$("#save").click(function(e){
+		e.preventDefault();
+		id = $(this).attr('data-id');
+		token = $("input[name='_token']").val();
+		txtTitle = $("input[name='txtTitle']").val();
+		cate_id = $("select[name='cate_id']").val();
+		txtDesc = $("textarea[name='txtDesc']").val();
+		txtContent = CKEDITOR.instances['txtContent'].getData();
+		oldCateId = $("select[name='cate_id']").attr("oldCateId");
+		$.ajax({
+			url:'post/'+id,
+			type:"PUT",
+			async:true,
+			data: {'_token':token,'title':txtTitle,'cate_id':cate_id,'description':txtDesc,'content':txtContent},
+			success:function(data){
+				$(".postEdit[data-id='"+data.id+"']").text(data.title);
+				if(oldCateId != data.cate_id){
+					$(".postEdit[data-id='"+data.id+"']").parent().parent().find('td#cateshow').text('Đã đổi');
+				}
+				$(".postEdit[data-id='"+data.id+"']").parent().parent().find('td#updated').text(data.updated_at);
+				$('#myModal').modal('hide');
+			}
+		});
+	});
+
+	$("#postCate").click(function(e){
+		e.preventDefault();
+		$(".cate").show();
+		$(".edit").hide();
+		$('.modal-footer').hide();
+		$("#myModal").modal("show");
+
+	});
 });

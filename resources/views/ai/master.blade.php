@@ -36,7 +36,7 @@
                             <li class="active"><a href="{{ route('user.index') }}">Users<span class="sr-only">(current)</span></a></li>
                             <li><a href="{{ route('post.index') }}">Posts</a></li>
                             @if( URL::current() == Route('post.index'))
-                            <li><a href="#" data-toggle='modal' data-target="#myModal">Cates</a></li>
+                            <li><a href="#" id="postCate">Cates</a></li>
                             @endif
                             <li><a href="{{ route('conf.index') }}">Confessions</a></li>
                             <li id="add_post"><a href="{{ route('post.create') }}">Quẩy</a></li>

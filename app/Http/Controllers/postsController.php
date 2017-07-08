@@ -71,7 +71,7 @@ class postsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -82,7 +82,8 @@ class postsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $posts = postsModel::find($id);
+        return response()->json($posts);
     }
 
     /**
@@ -94,7 +95,14 @@ class postsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $posts = postsModel::find($id);
+        $posts->title = $request->title;
+        $posts->cate_id = $request->cate_id;
+        $posts->description = $request->description;
+        $posts->content = $request->content;
+        $posts->update();
+
+        return response()->json($posts);
     }
 
     /**
@@ -117,5 +125,22 @@ class postsController extends Controller
         $posts->update();
 
         return response()->json($posts);
+    }
+
+    public function view($id){
+        $posts = postsModel::find($id);
+        $view = [
+            "title" => $posts->title,
+            "tbn" => $posts->tbn,
+            "description" => $posts->description,
+            "content" => $posts->content,
+            "username" => $posts->user->username,
+            "updated_at" => $posts->updated_at,
+
+        ];
+        return redirect()->route('viewDemo')->with($view);
+    }
+    public function viewDemo(){
+        return view('ai.layouts.view');
     }
 }
