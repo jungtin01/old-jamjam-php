@@ -31,6 +31,13 @@
                         <?php if(session('status')): ?>
                         <div class='alert alert-success' role='alert'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>Bạn đã Post thành công ... Post sẽ chờ ADMIN xét duyệt</div>
                         <?php endif; ?>
+                        <?php if(count($errors) > 0): ?>
+                            <div class='alert alert-danger' role='alert'>
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span><?php echo e($error); ?><br><br>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label for="txtTitle">Title</label>

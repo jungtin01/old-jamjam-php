@@ -36,7 +36,6 @@
                                     <a href="{{ route('post',$carou->id) }}"><img src="{{ asset('public/upload/imgsUpload') }}/{{ $carou->tbn }}" /></a>
                                     <div class="carousel-caption">
                                         <h3>{{ $carou->title }}</h3>
-                                        <p>{{ $carou->description }}</p>
                                     </div>
                                 </div>
                                 @endforeach
@@ -103,27 +102,10 @@
                 </div> <!-- end left-content -->
                 <div class="col-md-4" id='right-content'>
                     <h1 id="conf-title">Confession</h1>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
+                    @foreach($confs as $conf)
+                    <p class="conf-content"><span class="conf-span"><a href="#">#{{$conf->id}}</a></span>{!! $conf->content !!}</p>
                     <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
-                    <hr>
-                    <p class="conf-content"><span class="conf-span"><a href="#">#010101</a></span>Cũng lâu rồi chúng ta không gặp nhau em nhỉ haha nhớ lại những ngày mà chúng ta còn ở thời học sinh ấy,thiệt là vui nhỉ .Cùng nhau nhảy múa vui đùa cùng với đám bạn lờn</p>
+                    @endforeach
                     <hr>
                     
                     <div class="row" id="pagination">

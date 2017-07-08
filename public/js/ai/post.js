@@ -14,9 +14,9 @@ $(document).ready(function(){
 			async:true,
 			success:function(data){
 				if(data.level == 0){
-					$(".check[data-id='"+data.id+"']").replaceWith("<button type='button' class='btn btn-success check' value='1' data-id='"+data.id+"'>Check !</button>");
+					$(".check[data-id='"+data.id+"']").replaceWith("<button type='button' class='btn btn-warning check' value='1' data-id='"+data.id+"'>Check !</button>");
 				}else{
-					$(".check[data-id='"+data.id+"']").replaceWith("<button type='button' class='btn btn-warning check' value='0' data-id='"+data.id+"'>Uncheck !</button>");
+					$(".check[data-id='"+data.id+"']").replaceWith("<button type='button' class='btn btn-success check' value='0' data-id='"+data.id+"'>Checked !</button>");
 				}
 			}
 		});

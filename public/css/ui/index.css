@@ -71,6 +71,7 @@ body{
 .view-number{
 	margin-right: 1rem
 }
+.carousel-inner .item img{height: 500px;width:100%!important;}
 /*pagination*/
 
 #pagination nav ul{
@@ -119,6 +120,9 @@ body{
 
 
 /* Landscape phone to portrait tablet */
+@media (max-width: 500px) {
+	.carousel-inner .item img{max-height: 200px!important;}
+}
 @media (max-width: 768px) {
 	.glyphicon-jumbotron{
 		display: none;
@@ -130,6 +134,10 @@ body{
 		font-size: 24px;
     	max-width: 100%;
 	}
+	.carousel-caption h3{
+		font-size: 16px!important;
+	}
+	.carousel-inner .item img{max-height: 350px;}
 }
 @media (max-width: 1000px) {
 	#left-content{

@@ -25,9 +25,9 @@
                                     <td>{!! $conf->content !!}</td>
                                     <td>{{ $conf->updated_at }}</td>
                                     @if($conf->level == 0)
-                                        <td><button type="button" class="btn btn-success confCheck" value="1" data-route="{{ route('conf.update',$conf->id) }}" data-id="{{$conf->id}}">Check !</button></td>
+                                        <td><button type="button" class="btn btn-warning confCheck" value="1" data-route="{{ route('conf.update',$conf->id) }}" data-id="{{$conf->id}}">Check !</button></td>
                                     @else
-                                        <td><button type="button" class="btn btn-warning confCheck" value="0" data-route="{{ route('conf.update',$conf->id) }}" data-id="{{$conf->id}}">Uncheck !</button></td>
+                                        <td><button type="button" class="btn btn-success confCheck" value="0" data-route="{{ route('conf.update',$conf->id) }}" data-id="{{$conf->id}}">Checked !</button></td>
                                     @endif
                                     <td><button type="button" class="btn btn-danger confDel" data-id="{{$conf->id}}">DELETE</button></td>
                                     <script type="text/javascript">

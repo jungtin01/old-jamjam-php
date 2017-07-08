@@ -13,7 +13,7 @@
         <script src="{{ asset('public/js/ui/post.js') }}"></script>   
 @endsection
 @section('content')
-<div class="container-fluid" id="main-container" style="background:url({{ asset('public/upload/imgsUpload') }}/{{ $post->tbn }} }) center center no-repeat;background-size: cover;">
+<div class="container-fluid" id="main-container" style="background:url({{ asset('public/upload/imgsUpload') }}/{{ $post->tbn }} ) center center no-repeat;background-size: cover;">
             <div class="row">
                 <div class="container-fluid" id="opa-container">
                     <div class="row">
@@ -22,7 +22,7 @@
                             <p class="author"><a href="#">{{ $post->user->username }}</a><span> | </span>{{ $post->updated_at }}<span class='hidden-md hidden-lg'> | Save to Facebook</span></p>
                             <p class="lead desc">{{ $post->description }}</p>
                             <hr>
-                            {!! $post->content !!}
+                            <div class="content">{!! $post->content !!}</div>
                             
                             <hr>
                         

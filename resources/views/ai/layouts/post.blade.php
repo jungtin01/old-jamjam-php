@@ -40,9 +40,9 @@
                                     </td>
                                     <td>
                                         @if($post->level == 0)
-                                        <button type="button" class="btn btn-success check" value="1" data-id="{{$post->id}}">Check !</button>
+                                        <button type="button" class="btn btn-warning check" value="1" data-id="{{$post->id}}">Check !</button>
                                     @else
-                                        <button type="button" class="btn btn-warning check" value="0" data-id="{{$post->id}}">Uncheck !</button>
+                                        <button type="button" class="btn btn-success check" value="0" data-id="{{$post->id}}">Checked !</button>
                                     @endif
                                     </td>
                                     <td><button type="button" class="btn btn-danger postDel" data-id="{{$post->id}}">DELETE</button></td>
