@@ -107,7 +107,6 @@
                     <hr>
                     @endforeach
                     <hr>
-                    
                     <div class="row" id="pagination">
                         <nav aria-label="Page navigation" class="text-center">
                             <ul class="pagination">
